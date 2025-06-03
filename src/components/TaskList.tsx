@@ -45,6 +45,7 @@ function TaskList() {
   }
 
   return (
+      <div className='w-full flex justify-center font-[inter]'>
     <div className='w-1/2 h-screen mt-5'>
       <div className='text-5xl mb-3'> Task List</div>
       <div className='text-sm mb-3'> Sorted by completion</div>
@@ -52,6 +53,7 @@ function TaskList() {
       {tasks.map((task) => <TaskCell taskData={task} toggleChecked={() => toggleTask(task.id)} />)}
     </div>
 
+    </div>
     </div>
   )
 }
