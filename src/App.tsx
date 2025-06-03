@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import TaskList from './components/TaskList'
+import MessageThread from './components/MessageThread'
  import { BrowserRouter as Router, Route, Routes,Link } from 'react-router-dom';
 
 import './App.css'
@@ -22,7 +23,7 @@ function App() {
           </nav>
         </div>}/>
         <Route path="/task-list" element={<TaskList/>}/>
-        <Route path="/other" element={<TaskList/>}/>
+        <Route path="/message" element={<MessageThread/>}/>
       </Routes>
     </Router>
     </div>
