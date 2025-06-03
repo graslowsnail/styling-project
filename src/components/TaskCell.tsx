@@ -12,13 +12,29 @@ type TaskProps = {
 } 
 
 function TaskCell({ taskData, toggleChecked}: TaskProps) {
+  let btnStyle
+  let taskStyle
   const checked = taskData.checked
 
+  const baseBtnStyle = 'border  border-gray-300 w-5 h-5 rounded-md' 
+  const clickedBtn= 'bg-green-600 w-5 h-5 rounded-md' 
+
+  const baseTaskStyle ='p-2 px-4 border border-gray-200 w-full flex flex-row items-center gap-3 rounded-lg'
+  const toggledTask='bg-green-100 p-2 px-4 border border-gray-200 w-full flex flex-row items-center gap-3 rounded-lg'
+
+  if(checked){
+    btnStyle = clickedBtn
+    taskStyle = toggledTask
+  } else {
+    btnStyle = baseBtnStyle
+    taskStyle = baseTaskStyle
+  }
+
   return (
-      <div className='p-2 px-4 border border-gray-300 w-full flex flex-row items-center gap-3 rounded-lg'>
+      <div className={taskStyle}>
         <button
-          className='border boarder-gray-300 w-5 h-5 rounded-md' 
-          onClick={() => console.log('button Clicked', taskData.id)}
+          className= {btnStyle}
+          onClick={toggleChecked}
         />
 
         <div>

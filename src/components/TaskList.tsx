@@ -50,7 +50,7 @@ function TaskList() {
       <div className='text-5xl mb-3'> Task List</div>
       <div className='text-sm mb-3'> Sorted by completion</div>
     <div className='flex flex-col gap-2 items-center justify-center '>
-      {tasks.map((task) => <TaskCell taskData={task} toggleChecked={() => toggleTask(task.id)} />)}
+      {tasks.sort((task1, task2) => task1.checked ? -1 : 1).map((task) => <TaskCell taskData={task} toggleChecked={() => toggleTask(task.id)} />)}
     </div>
 
     </div>
